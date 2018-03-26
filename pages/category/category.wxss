@@ -1,0 +1,154 @@
+/*页面背景*/
+
+page {
+  background-color: #fff;
+  /* margin-top: 90rpx; */
+}
+
+/* 搜索框 */
+
+.search-box {
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  width: 671rpx;
+  height: 90rpx;
+  padding: 0 40rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.search-icon {
+  position: absolute;
+  top: 30rpx;
+  left: 50rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.search-input {
+  display: inline-block;
+  background: #eee;
+  font-size: 30rpx;
+  font-family: '微软雅黑';
+  width: 650rpx;
+  height: 50rpx;
+  min-height: 0rpx;
+  padding-left: 50rpx;
+  border-radius: 25rpx;
+}
+
+.search-input::placeholer {
+  color: #000;
+}
+
+/* .search-button {
+  color: #F08300;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #F8C180;
+  width: 100rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+} */
+
+/*容器总体布局为左右两列*/
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/*侧边栏顶级分类给予固定宽度*/
+
+.sidebar {
+  width: 240rpx;
+  border-top: 1px solid #e5e5e5;
+  height: 568px;
+}
+
+/*text块状布局独占一行*/
+
+.sidebar text {
+  display: block;
+  border: 1px solid #e5e5e5;
+  border-top: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #232626;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+/*hight light*/
+
+.sidebar text.highlight {
+  background-color: #f3f5f7;
+  color: #f23131;
+  border-right: 0;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*category banner*/
+
+.banner {
+  width: 100%;
+  height: 180rpx;
+  margin: 20rpx 0;
+}
+
+/* 标题 */
+
+.title {
+  display: block;
+  padding: 30rpx;
+  font-size: 30rpx;
+}
+
+/*网格布局子类九宫格分布*/
+
+.gridview {
+  background-color: #fff;
+  height: 100%;
+  box-sizing: border-box;
+  border-top: 1rpx solid #ccc;
+}
+
+/*向左流动*/
+
+.gridview dl {
+  box-sizing: border-box;
+  width: 250rpx;
+  float: left;
+  text-align: center;
+  padding: 50rpx 0;
+  border-right: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+/*图片*/
+
+.gridview dd image {
+  width: 100%;
+  height: 120rpx;
+}
+
+/*文字*/
+
+.gridview dt text {
+  font-size: 30rpx;
+  text-align: center;
+  display: block;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+}

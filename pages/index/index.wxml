@@ -1,0 +1,125 @@
+<!-- banner图 -->
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{banner}}" wx:key="">
+    <swiper-item>
+      <image src="{{item.atturl}}" data-id="{{item.aid}}" mode="widthFix" class="swiper-image" bindtap="showDetail" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 旺东头条 -->
+<view class="headlineAd">
+  <image class="wangdongHeadline" src="../../images/wangdongHeadline.png" mode="widthFix"></image>
+  <block wx:for="{{ headline }}" wx:key="">
+    <text wx:if="{{ item.show }}">{{ item.title }}</text>
+  </block>
+</view>
+
+<!-- 今天吃什么 -->
+<view class="section">
+  <image class="sectionTitle" src="/images/section_01.png"></image>
+  <view class="tabLine">
+    <block wx:for="{{ goods.todayWhatEat.tagList }}" wx:key>
+      <text class="section-tab {{ tags_status.todayWhatEat==index?'section-tab-selected':'' }}" bindtap="tabClick" data-index="{{ index }}" data-id="{{ item.tag_id }}" data-section="todayWhatEat">{{ item.tag_name }}</text>
+    </block>
+  </view>
+  <view class="section-main">
+    <scroll-view scroll-x="true" scroll-y>
+      <block wx:for="{{ goods.todayWhatEat.goodsList }}" wx:key>
+        <view class="goods-item" bindtap="showDetail" data-id="{{ item.goods_id }}">
+          <image src="{{item.thumbnail}}"></image>
+          <text>{{item.name}}</text>
+          <text style="color:#FA1919">￥{{item.price}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="showMore-button">
+      <text>查看更多</text>
+      <image mode="widthFix" src="/images/rightArrow.png"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 大家都在买 -->
+<view class="section">
+  <image class="sectionTitle" src="/images/section_02.png"></image>
+  <view class="section-main">
+    <scroll-view scroll-x="true" scroll-y>
+      <view wx:for="{{goods.allInBuy.goodsList}}" wx:key="" class="goods-item" data-id="{{ item.goods_id }}" bindtap="showDetail">
+        <image src="{{item.thumbnail}}"></image>
+        <text>{{item.name}}</text>
+        <text style="color:#FA1919">￥{{item.price}}</text>
+      </view>
+    </scroll-view>
+    <view class="showMore-button">
+      <text>查看更多</text>
+      <image mode="widthFix" src="/images/rightArrow.png"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 错过一季再等一年 -->
+<view class="section section-big">
+  <image class="sectionTitle" src="/images/section_03.png"></image>
+  <view wx:for="{{goods.lostWillNextYear.advList}}" wx:key="" class="section-main-big" data-id="{{ item.url }}" bindtap="showDetail" class="goods-item-big">
+    <image mode="aspectFill" src="{{item.atturl}}"></image>
+  </view>
+</view>
+
+<!-- 每周特供 -->
+<view class="weeklySale">
+  <image class="sectionTitle" mode="widthFix" src="../../images/section_04.png"></image>
+  <image class="weeklySale-item" wx:for="{{goods.everyWeekHave.advList}}" wx:key="" mode="widthFix" src="{{item.atturl}}" data-id="{{ item.url }}" bindtap="showDetail"></image>
+</view>
+
+<!-- 吃遍全中国 -->
+<view class="section">
+
+  <image class="sectionTitle" src="/images/section_05.png"></image>
+
+  <scroll-view scroll-x class="tabLine">
+    <block wx:for="{{ goods.eatAllChina.tagList }}" wx:key>
+      <text class="section-tab {{ tags_status.eatAllChina==index?'section-tab-selected':'' }}" bindtap="tabClick" data-index="{{ index }}" data-id="{{ item.tag_id }}" data-section="eatAllChina">{{ item.tag_name }}</text>
+    </block>
+  </scroll-view>
+
+  <view class="section-main">
+    <scroll-view scroll-x="true" scroll-y>
+      <view wx:for="{{ goods.eatAllChina.goodsList }}" wx:key="" class="goods-item" data-id="{{ item.goods_id }}" bindtap="showDetail">
+        <image src="{{item.thumbnail}}"></image>
+        <text>{{item.name}}</text>
+        <text style="color:#FA1919">￥{{item.price}}</text>
+      </view>
+    </scroll-view>
+    <view class="showMore-button">
+      <text>查看更多</text>
+      <image mode="widthFix" src="/images/rightArrow.png"></image>
+    </view>
+  </view>
+
+</view>
+
+<!-- 想吃全世界 -->
+<view class="section">
+  <image class="sectionTitle" src="/images/section_06.png"></image>
+  <scroll-view scroll-x class="tabLine">
+    <block wx:for="{{ goods.eatAllWorld.tagList }}" wx:key>
+      <text class="section-tab {{ tags_status.eatAllWorld==index?'section-tab-selected':'' }}" bindtap="tabClick" data-index="{{ index }}" data-id="{{ item.tag_id }}" data-section="eatAllWorld">{{ item.tag_name }}</text>
+    </block>
+  </scroll-view>
+  <view class="section-main">
+    <scroll-view scroll-x="true" scroll-y>
+      <block wx:for="{{ goods.eatAllWorld.goodsList }}" wx:key>
+        <view class="goods-item" data-id="{{ item.goods_id }}" bindtap="showDetail">
+          <image src="{{item.thumbnail}}"></image>
+          <text>{{item.name}}</text>
+          <text style="color:#FA1919">￥{{item.price}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="showMore-button">
+      <text>查看更多</text>
+      <image mode="widthFix" src="/images/rightArrow.png"></image>
+    </view>
+  </view>
+</view>

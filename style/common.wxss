@@ -1,0 +1,19 @@
+.border-box { box-sizing: border-box; }
+
+.mt { margin-top: 20rpx; }
+.mb { margin-bottom: 20rpx; }
+
+.pd { padding: 20rpx; }
+.pd-h { padding: 0 20rpx; }
+.pd-v { padding: 20rpx 0; }
+
+.bt { border-top: 1px solid #eee; }
+.bb { border-bottom: 1px solid #eee; }
+
+.ellipse {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.fff { background-color: #fff; }

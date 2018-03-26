@@ -1,0 +1,66 @@
+<!-- 标签 -->
+<view class="class-tab">
+  <text wx:for="{{ orderStatus }}" bindtap="tabClick" data-index="{{ index }}" class="{{ tab == index ? 'text-select' : 'text-normal' }}">{{ item.text }}</text>
+</view>
+
+<!-- 商品列表 -->
+<view class="order-item" wx:for="{{orders}}" wx:key>
+
+  <text class="order-status">{{ item.orderStatus }}</text>
+
+  <view class="order-header">
+    <image src="/images/icon_store.png" mode="widthFix"></image>
+    <text>{{item.store_name}}</text>
+  </view>
+
+  <text class="order-header sn">订单编号：{{item.sn}}</text>
+
+  <!-- 该订单商品列表 -->
+  <view wx:for="{{item.orderItemList}}" wx:for-item="mapping" wx:key="" class="carts-item" bindtap="details" data-index="{{index}}">
+    <view>
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{mapping.image}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <!-- 商品标题 -->
+      <text class="carts-title">{{mapping.name}}</text>
+    </view>
+    <view class="carts-right">
+      <text class="carts-price">￥{{mapping.price}}</text>
+      <text class="carts-num">x{{mapping.num}}</text>
+    </view>
+  </view>
+
+  <!-- 订单脚部 -->
+  <view class="order-footer">
+    <text>共{{item.goods_num}}件商品 合计：</text>
+    <text>￥{{item.order_amount}}</text>
+  </view>
+
+  <view wx:if="{{ item.param == 'wait_pay' }}" class="order-footer">
+    <!-- <text class="btn-pay" bindtap="cancel" data-index="{{index}}">取消订单</text> -->
+    <text class="btn-pay btn-pay-pink" data-index="{{index}}" bindtap="payTap" data-order-id="{{ item.order_id }}" data-sn="{{ item.sn }}" data-money="{{ item.order_amount }}">立即支付</text>
+  </view>
+
+  <view wx:elif="{{item.order_status == 1}}" class="order-footer">
+    <text class="btn-pay btn-pay-pink" data-index="{{index}}" bindtap="confirm">申请退款</text>
+  </view>
+
+  <view wx:elif="{{ item.param == 'wait_rog' }}" class="order-footer">
+    <!-- <text class="btn-pay" bindtap="details" data-index="{{index}}">查看物流</text> -->
+    <text class="btn-pay" data-index="{{index}}" bindtap="confirm">确认收货</text>
+  </view>
+
+  <view wx:elif="{{item.order_status == 4}}" class="order-footer">
+    <text class="btn-pay" bindtap="details" data-index="{{index}}">查看订单</text>
+  </view>
+
+  <!-- <view wx:else class="order-footer">
+</view> -->
+
+</view>
+
+
+<view wx:if="{{orders.length == 0}}" class="view-tint">
+  <text>暂无订单</text>
+</view>

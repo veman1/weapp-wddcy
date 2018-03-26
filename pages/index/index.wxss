@@ -1,0 +1,610 @@
+page {
+  background: #f2f2f2;
+}
+
+swiper {
+  height: 350rpx;
+}
+.swiper-image {
+  width: 100%;
+}
+
+/* 搜索框 */
+
+.search-box {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 671rpx;
+  height: 90rpx;
+  padding: 0 40rpx;
+}
+
+.bgOrange {
+  background: red;
+}
+
+.search-icon {
+  position: absolute;
+  top: 30rpx;
+  left: 50rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.search-input {
+  display: inline-block;
+  background: #fff;
+  font-size: 30rpx;
+  font-family: '微软雅黑';
+  width: 500rpx;
+  height: 50rpx;
+  min-height: 0rpx;
+  padding-left: 50rpx;
+  border-radius: 25rpx;
+}
+
+.search-button {
+  color: #f08300;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background: #fff;
+  width: 100rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+/*功能区*/
+
+.func-area {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0;
+  padding-top: 10rpx;
+  background: white;
+  padding-bottom: 18rpx;
+}
+
+.func-area view {
+  width: 25%;
+  text-align: center;
+}
+
+.func-area text {
+  display: block;
+  color: #6c6c6c;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+
+.func-area image {
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.container-class {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头条广告 */
+
+.headlineAd {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  background: #fff;
+  padding: 0 30rpx;
+}
+
+.wangdongHeadline {
+  width: 223rpx;
+}
+
+.headlineAd text {
+  color: #404040;
+  font-size: 25rpx;
+  font-weight: bold;
+  width: 442rpx;
+}
+
+.rightArrow {
+  width: 20rpx;
+}
+
+/* 广告 */
+
+/* .ad-box {
+  background: #f59d6d;
+  overflow: hidden;
+  padding: 15rpx;
+}
+
+.ad-left {
+  width: 380rpx;
+  float: left;
+}
+
+.ad-right {
+  float: left;
+  width: 336rpx;
+} */
+
+/* 主体 */
+
+.section {
+  overflow: hidden;
+  background: #fff;
+  padding: 20rpx auto;
+  margin-top: 20rpx;
+}
+
+.sectionTitle {
+  display: block;
+  width: 320rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+}
+
+.tabLine {
+  white-space: nowrap;
+  background: #f2f2f2;
+  width: 750rpx;
+  height: 80rpx;
+  border-top: 1rpx solid #d9d9d9;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.tabLine text{
+  font-size: 33rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 20rpx;
+}
+.section-tab-selected {
+  color: #F06022;
+  border-bottom: 2px solid #F06022;
+}
+.section-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx;
+}
+
+
+
+.section-main scroll-view {
+  white-space: nowrap;
+  width: 660rpx;
+}
+
+.goods-item {
+  overflow: hidden;
+  display: inline-block;
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.goods-item image {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.goods-item text {
+  display: block;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.showMore-button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #666;
+  font-size: 28rpx;
+  width: 100rpx;
+  margin: auto 0;
+}
+
+.showMore-button text {
+  display: block;
+  width: 20rpx;
+}
+
+.showMore-button image {
+  width: 12rpx;
+}
+
+/* 大的框 */
+
+.section-big .sectionTitle {
+  width: 440rpx;
+}
+
+.section-main-big {
+  padding-left: 20rpx;
+}
+
+.goods-item-big {
+  float: left;
+  position: relative;
+  width: 220rpx;
+  height: 330rpx;
+  margin: 0 0 20rpx 20rpx;
+}
+
+.goods-item-big image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-textBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  width: 100%;
+}
+
+.item-textBox text {
+  display: block;
+  font-size: 30rpx;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* 每周特供 */
+
+.weeklySale {
+  text-align: center;
+  background: #fff;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.weeklySale-item {
+  width: 100%;
+}
+
+/* 精选推荐 */
+
+.main {
+  padding-left: 20rpx;
+  background: #fff;
+  text-align: center;
+  margin-top: 15rpx;
+}
+
+.main-title {
+  width: 290rpx;
+  margin: 20rpx 0;
+}
+
+.list {
+  background: #fff;
+  overflow: hidden;
+}
+
+.list image {
+  width: 345rpx;
+  height: 345rpx;
+  border-radius: 5rpx;
+}
+
+/*主商品区*/
+
+.carts-item {
+  position: relative;
+  float: left;
+  width: 340rpx;
+  /* border-bottom: 3rpx solid #e3e3e3; */
+  border: 1rpx solid #ef8d02;
+  border-radius: 8rpx;
+  background: #fff;
+  margin: 0 20rpx 30rpx 0;
+  overflow: hidden;
+}
+
+/*左部图片*/
+
+.carts-image {
+  width: 100%;
+}
+
+/*右部描述*/
+
+.carts-text {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  width: 90%;
+  font-size: 25rpx;
+  /* color: #444; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5rpx 0;
+  line-height: 30rpx;
+  /* display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; */
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: #de3d96;
+  font-size: 25rpx;
+  line-height: 22px;
+  margin-top: 15rpx;
+}
+
+image.addCart-button {
+  position: absolute;
+  bottom: 10rpx;
+  right: 15rpx;
+  width: 40rpx;
+}
+
+/* 当季特卖 */
+
+.seasonSale-section .main-title {
+  display: block;
+  margin: 0 auto;
+}
+
+.seasonSale-categoryBox {
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+
+.seasonSale-categoryTitle {
+  width: 100%;
+  display: block;
+}
+
+.seasonSale-item-big {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300rpx;
+  height: 360rpx;
+  padding: 0 18rpx;
+  border-right: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.seasonSale-item-big .goods-image {
+  width: 260rpx;
+  height: 257rpx;
+}
+
+.seasonSale-item-big text, .seasonSale-item-small text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 90%;
+  font-size: 30rpx;
+}
+
+.seasonSale-price {
+  color: #ff4646;
+}
+
+.seasonSale-item-small {
+  float: left;
+  position: relative;
+  box-sizing: border-box;
+  width: 450rpx;
+  height: 180rpx;
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.seasonSale-item-small .goods-image {
+  float: left;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.seasonSale-item-small .right-box {
+  float: left;
+  overflow: hidden;
+  width: 250rpx;
+  text-align: left;
+  padding: 0 0 0 20rpx;
+}
+
+.seasonSale-item-small .seasonSale-price {
+  display: block;
+  margin-top: 50rpx;
+}
+
+/******************************/
+
+.container-goods {
+  background: white;
+  margin-top: 20rpx;
+}
+
+.category_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.redline {
+  height: 80rpx;
+  width: 10rpx;
+  background-color: red;
+}
+
+.container-goods .caption {
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 60rpx;
+  text-indent: 20rpx;
+  padding: 10rpx;
+}
+
+.main-goods {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+}
+
+.main-goods .single-goods {
+  width: 50%;
+}
+
+.main-goods image {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin: 20rpx auto;
+}
+
+.main-goods .title {
+  display: block;
+  color: #999;
+  font-size: 28rpx;
+  margin: 10rpx 6rpx;
+  margin-left: 20rpx;
+  line-height: 28rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  flex-shrink: 0;
+}
+
+.main-goods .summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main-goods .summary text {
+  font-size: 28rpx;
+  margin: 10rpx 20rpx;
+}
+
+.main-goods .summary .price {
+  color: red;
+}
+
+.main-goods .summary .sale {
+  color: gray;
+}
+
+.view-ad {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 600rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-header {
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ad-footer {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ad-footer image {
+  width: 373rpx;
+  height: 200rpx;
+}
+
+.ad1 {
+  width: 373rpx;
+  height: 396rpx;
+}
+
+.header-right {
+  width: 373rpx;
+  height: 396rpx;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.header-right image {
+  width: 373rpx;
+  height: 196rpx;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 60rpx;
+  right: 60rpx;
+}
+
+.footer image {
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 120rpx;
+  height: 100rpx;
+}
+
+.footer-desc {
+  font-size: 12px;
+  padding-bottom: 15rpx;
+  padding-top: 15rpx;
+  text-align: center;
+  color: #999;
+}

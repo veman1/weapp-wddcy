@@ -1,0 +1,16 @@
+@import '/style/common.wxss';
+
+page {
+	background: #eee;
+  font-family: '微软雅黑';
+  font-size: 30rpx;
+}
+
+image {
+	width: auto;
+	height: auto;
+}
+
+p {
+	display: block;
+}

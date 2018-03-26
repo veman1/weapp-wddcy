@@ -1,0 +1,115 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wxaefb1474ee48a97a",
+	"projectname": "%E6%97%BA%E4%B8%9C%E5%A4%A7%E8%8F%9C%E5%9B%AD",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写订单",
+					"pathName": "pages/order/ordersubmit/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "收藏列表",
+					"pathName": "pages/member/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/member/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/order/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址选择",
+					"pathName": "pages/address/select/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/address/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "增加地址",
+					"pathName": "pages/address/add/add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑地址",
+					"pathName": "pages/address/edit/index",
+					"query": "addr_id=8058"
+				},
+				{
+					"id": 9,
+					"name": "订单详情",
+					"pathName": "pages/order/details/index",
+					"query": "order_sn=151071664071-1"
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/index",
+					"query": ""
+				},
+				{
+					"id": 12,
+					"name": "商品列表",
+					"pathName": "pages/goods/list/list",
+					"query": "categoryId=357&cName=新鲜蔬菜"
+				}
+			]
+		}
+	}
+}

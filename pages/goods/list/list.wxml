@@ -1,0 +1,47 @@
+<!-- 搜索框 -->
+<view class="search-box">
+  <image class="search-icon" src="/images/search.png"></image>
+  <input class="search-input" placeholder="搜一搜" value="{{keywords}}" bindinput="input" bindconfirm="search" data-keywords="{{keywords}}" />
+</view>
+
+<!-- 标签栏 -->
+<view class="tabs-box">
+  <view class="tab tab-active" bindtap="bindDropDown">
+    <text>{{ categoryName }}</text>
+    <scroll-view wx:if="{{ dropDownShow }}" scroll-y class="drop-down">
+      <block wx:for="{{ topCat }}" wx:key="">
+
+        <text catchtap="tapTopCategory" data-cid="{{ item.cat_id }}" data-index="{{ index }}">{{ item.name }}</text>
+
+      </block>
+    </scroll-view>
+  </view>
+
+   <view class="tab {{ sort === 0 || sort === 1 ? 'tab-active' : '' }}" bindtap="tapSort" data-sort-index="{{ sort % 2 ? sort - 1 : sort + 1 }}" data-index="{{ 0 }}">
+    <text>综合</text>
+  </view>
+
+  <view class="tab {{ sort === 2 || sort ===  3 ? 'tab-active' : '' }}" bindtap="tapSort" data-sort-index="{{ sort % 2 ? sort - 1 : sort + 1 }}" data-index="{{ 1 }}">
+    <text>销量</text>
+  </view>
+
+  <view class="tab {{ sort === 4 || sort ===  5 ? 'tab-active' : '' }}" bindtap="tapSort" data-sort-index="{{ sort % 2 ? sort - 1 : sort + 1 }}" data-index="{{ 2 }}">
+    <text>价格</text>
+  </view>
+</view>
+
+<!-- 商品列表 -->
+<view class="goodsList">
+  <view wx:for="{{goods}}" wx:key="objectId" class="carts-item" data-object-id="{{item.goods_id}}" bindtap="tapGoods">
+    <view>
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{item.original}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <!-- 商品标题 -->
+      <text class="carts-title">{{item.name}}</text>
+      <!-- 价格 -->
+      <text class="carts-price">￥{{item.price}}</text>
+    </view>
+  </view>
+</view>

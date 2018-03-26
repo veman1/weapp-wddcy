@@ -1,0 +1,58 @@
+
+<view class="parent">
+
+  <view wx:if="{{ !address }}" class="addAddress">
+    <image class="addAddress-add" mode="widthFix" src="../../../images/ordersubmit/add.png"></image>
+    <text class="addAddress-text">新增收货地址</text>
+    <image class="addAddress-arrow" mode="widthFix" src="../../../images/ordersubmit/arrow-right-pink.png"></image>
+  </view>
+
+  <view wx:if="{{ address }}" class="address" bindtap="toAddress">
+
+    <p class="address-user">
+      {{ address.name }} {{ address.mobile }}
+      <text wx:if="{{ address.def_addr }}" class="text-badge">默认</text>
+    </p>
+
+    <p class="address-addr">
+      <image src="/images/icon_loc.png" mode="widthFix" class="addr-icon"></image>
+      <text class="addr-content">{{ address.province }}{{ address.region }}{{ address.addr }}</text>
+    </p>
+
+  </view>
+
+  <view class="below">
+    <block wx:for="{{ cartItem }}" wx:key>
+      <view class="goods">
+        <image class="goods-image" src="{{ item.image_default }}"></image>
+        <view class="goods-info">
+          <view class="upperLine">
+            <text class="goodsName">{{ item.name }}</text>
+            <text class="goodsPrice">￥{{ item.price }}</text>
+          </view>
+          <view class="lowerLine">
+            <text class="goodsSpec"></text>
+            <text class="goodsAmount">×{{ item.num }}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="info total">
+    <text>商品金额</text>
+    <text>￥{{ orderPrice.goodsPrice }}</text>
+  </view>
+
+  <view class="info total">
+    <text>运费</text>
+    <text>￥{{ orderPrice.shippingPrice }}</text>
+  </view>
+
+  <view class="footer">
+    <text>付款：￥</text>
+    <text class="footer-price">{{ orderPrice.needPayMoney }}</text>
+    <text class="submitOrder" bindtap="submit">提交订单</text>
+  </view>
+
+</view>

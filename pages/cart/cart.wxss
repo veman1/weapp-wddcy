@@ -1,0 +1,286 @@
+
+page {
+  padding: 0 0 100rpx;
+}
+.g-stores_sname {
+  display: flex;
+  align-items: center;
+  color: #333;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: .5em 1em;
+}
+.g-stores_sname>image {
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 10rpx;
+}
+.g-stores_sname>text {
+  width: 700rpx; 
+}
+
+/*单个商品*/
+
+.carts-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  height: 220rpx;
+  border-bottom: 1px solid #eee;
+   padding: 20rpx 20rpx 20rpx 0; 
+}
+
+.checkbox-area {
+  height: 100%;
+  padding: 0 15rpx;
+  display: flex;
+  align-items: center;
+}
+.checkbox-area image {
+  width: 23px;
+  height: 23px
+}
+
+.carts-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #eee;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.carts-right {
+  box-sizing: border-box;
+  padding: 10rpx 0;
+  width: 530rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*右部描述*/
+
+.carts-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.selfSupport-image {
+  width: 100rpx;
+  height: 40rpx;
+}
+
+.image-delete {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.carts-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*商品加减按钮*/
+
+/*stepper容器*/
+
+.stepper {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 80px;
+  height: 23px;
+}
+
+/*加号与减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 23px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  color: black;
+  float: left;
+  margin: 0 auto;
+  width: 40px;
+  height: 23px;
+  text-align: center;
+  font-size: 12px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  min-height: 0rpx;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+/*右上部分标题*/
+
+.carts-title {
+  width: 80%;
+  font-size: 30rpx;
+  color: #444;
+  line-height: 38rpx;
+  flex-shrink: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.carts-key-name {
+  margin-top: 10rpx;
+  font-size: 27rpx;
+  color: #999;
+}
+
+/*右下部分价格与数量*/
+
+.carts-subtitle {
+  font-size: 25rpx;
+  color: darkgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*价格*/
+
+.carts-price {
+  color: #F08300;
+  font-size: 30rpx;
+  /* line-height: 22px; */
+}
+
+/*复选框样式*/
+
+.carts-list icon {
+  margin-top: 60rpx;
+  margin-right: 20rpx;
+}
+
+/*底部按钮*/
+
+.carts-footer {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 9;
+  bottom: 0;
+  border-top: 1px solid #eee;
+  background: white;
+}
+
+.carts-footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 100rpx;
+  margin-left: 30rpx;
+}
+
+/*复选框*/
+
+.carts-footer icon {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+/*全选字样*/
+
+.carts-footer text {
+  font-size: 30rpx;
+  margin-left: 8rpx;
+}
+
+/*立即结算按钮*/
+
+.carts-footer .button {
+  line-height: 100rpx;
+  text-align: center;
+  width: 22%;
+  height: 100rpx;
+  background-color: #F08300;
+  color: white;
+  font-size: 26rpx;
+  border: 0;
+}
+
+.carts-footer-left text {
+  font-size: 27rpx;
+}
+
+.text-price {
+  font-size: 27rpx; 
+  color: #999;
+  background-image: url('https://wudhl.com/delete.png');
+  background-size: 160% 100%;
+  text-decoration-line: line-through;
+}
+
+/* .text-red{
+	font-size: 27rpx;
+	color: orangered;
+} */
+
+.text-pink {
+  font-size: 27rpx;
+  color: #de3d96;
+}
+
+/* 没有商品提示 */
+.view-empty {
+  margin: 200rpx 0 0;
+}
+.view-empty>image {
+  display: block;
+  width: 300rpx;
+  margin: auto;
+}
+.view-empty .hint {
+  display: block;
+  text-align: center;
+  margin: 20rpx 0;
+}
+.view-empty .btn {
+  display: block;
+  background: red;
+  color: #fff;
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 3px;
+  margin: auto;
+}

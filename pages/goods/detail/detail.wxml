@@ -1,0 +1,133 @@
+
+
+<!-- 标签栏 -->
+<view class="tabBar">
+  <text data-index="0" class="tab {{tab==0?'tab-active':''}}" bindtap="tabClick">商品</text>
+  <text data-index="1" class="tab {{tab==1?'tab-active':''}}" bindtap="tabClick">详情</text>
+  <text data-index="2" class="tab {{tab==2?'tab-active':''}}" bindtap="tabClick">评价</text>
+</view>
+
+<!-- 概览 -->
+<view class="overview section">
+
+  <image class="banner" src="{{ goods.big }}" mode="widthFix"></image>
+
+  <view class="overview-title-box">
+    <text>{{goods.name}}</text>
+  </view>
+
+  <view class="overview-price-box">
+    <text class="overview-price">￥{{goods.price}}</text>
+  </view>
+
+</view>
+
+<!-- 详情 -->
+
+<view class="detail-box section">
+  <text class="part-header">详情</text>
+  <block wx:for="{{ galleryList }}" wx:key="">
+
+    <image mode="widthFix" src="{{ item.big }}" data-index="{{ index }}" bindload="imgLoad"></image>
+
+  </block>
+</view>
+
+<!-- 评价 -->
+
+
+<view class="commentBox section">
+  <text class="part-header">评价</text>
+  <view wx:if="{{!goods.comment}}" class="comment-ifNone">
+    <image mode="widthFix" src="/images/none.png"></image>
+    <text>暂无评价</text>
+  </view>
+  <view wx:else class="contentBox">
+
+    <view  wx:for="{{goods.comment}}" class="commentItem">
+      <view class="comment-headline">
+        <view class="comment-headline-left">
+          <image src="/images/img_head.png"></image>
+          <text>{{item.user_name}}</text>
+        </view>
+        <text class="comment-headline-right">2017-07-12</text>
+      </view>
+      <text>{{item.content}}</text>
+    </view>
+
+    
+  </view>
+</view>
+
+
+
+
+<!-- 底部 -->
+<view class="footer">
+  <view class="footer-left">
+    <view class="footer-icon">
+      <contact-button style="bottom:50%;right:50%"></contact-button>
+      <contact-button style="bottom:50%;left:50%"></contact-button>
+      <contact-button style="top:50%;left:50%"></contact-button>
+      <contact-button style="top:50%;right:50%"></contact-button>
+      <image src="/images/contact.png" mode="aspectFit"></image>
+      <text>联系客服</text>
+    </view>
+    <view class="footer-icon" bindtap="{{ collected ? 'cancelCollect' : 'addCollect' }}" data-goods-id="{{ goods.goods_id }}" data-favorite-id="{{ collected.favorite_id }}">
+      <image wx:if="{{ !collected }}" src="/images/collect1.png" mode="aspectFit"></image>
+      <image wx:else  src="/images/collect2.png" mode="aspectFit"></image>
+      <text>收藏</text>
+    </view>
+    <view class="footer-icon" bindtap="toCart">
+      <image src="/images/addCart.png" mode="aspectFit"></image>
+      <text>购物车</text>
+    </view>
+  </view>
+  <text class="add-cart" bindtap="showPopUp">加入购物车</text>
+</view>
+
+
+<!-- 浮动按钮 -->
+<!-- <view class="fixedButton">
+  <view bindtap="toTop" style="top:0"></view>
+  <view bindtap="home" style="bottom:0"></view>
+  <image mode="widthFix" src="/images/detail_fixed_button2.png"></image>
+</view> -->
+
+<!-- 弹窗 -->
+<view class="mask {{ popUpShow ? 'mask-active' : '' }}" bindtap="hidePopUp"></view>
+<view class="operateBox {{popUpShow ? 'operateBox-active' : '' }}">
+  <view class="operateBox-info">
+    <image src="{{goods.big}}"></image>
+    <text>{{goods.name}}</text>
+    <text class="spec-price">￥{{goods.price}}</text>
+  </view>
+
+  <view>
+    <view wx:for-index="pos" wx:for="{{goods.goods.goods_spec_list}}" wx:key="" class="view-sub-prop">
+      <text class="text-prop">{{item[0].spec_name}}</text>
+      <view class="view-btns">
+        <text bindtap="propClick" data-index="{{pos}}" data-pos="{{index}}" class="{{textStates[item.isClick]}}" wx:for="{{item}}" wx:key="">{{item.item}}</text>
+      </view>
+    </view>
+
+    <view class="chooseNum">
+      <view class="chooseNum-text">
+        <text>购买数量：</text>
+        <text style="font-size:22rpx;color:#999">剩余{{goods.goods.store_count}}件</text>
+      </view>
+      <!-- 数量加减器 -->
+      <view class="stepper ">
+        <text class="{{minusStatuses[index]}} " data-index="{{index}} " bindtap="bindMinus">-</text>
+        <input type="Number" bindinput="inputNum" bindchange="inputChange" value="{{goods_num}}" />
+        <text class="normal " data-index="{{index}} " bindtap="bindPlus">+</text>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 购买/加入购物车 按钮 -->
+  <text class="submitButton" bindtap="addCart">加入购物车</text>
+  <!-- 关闭按钮 -->
+  <image src="/images/icon_del.png" bindtap="hidePopUp"></image>
+</view>

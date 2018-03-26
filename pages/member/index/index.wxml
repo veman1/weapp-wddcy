@@ -1,0 +1,50 @@
+<view class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap="chooseImage"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>
+
+<view class="myOrder">
+  <view class="headline">
+    <text class="left">我的订单</text>
+    <view class="right" bindtap="navigateToOrder">
+      查看全部
+      <image src="/images/rightArrow.png"></image>
+    </view>
+  </view>
+  <view class="order-area">
+    <view data-tab="0" bindtap="navigateToOrder" class="order">
+      <image src="/images/order-area_01.png" />
+      <text>待付款</text>
+    </view>
+    <view data-tab="1" bindtap="navigateToOrder" class="order">
+      <image src="/images/order-area_02.png" />
+      <text>待发货</text>
+    </view>
+    <view data-tab="2" bindtap="navigateToOrder" class="order">
+      <image src="/images/icon_receive.png" />
+      <text>待收货</text>
+    </view>
+    <view data-tab="3" bindtap="navigateToOrder" class="order">
+      <image src="/images/icon_finish.png" />
+      <text>已完成</text>
+    </view>
+  </view>
+</view>
+
+<navigator url="/pages/address/select/index" hover-class="none" class="tableviewcell">
+  <image class="icon" src="/images/icon_loc.png" mode="aspectFit" />
+  <text>收货地址</text>
+  <image class="arrow" src="/images/rightArrow.png" mode="widthFix" />
+</navigator>
+
+<navigator url="/pages/member/collect/collect" hover-class="none" class="tableviewcell">
+  <image class="icon" src="/images/collect1.png" mode="aspectFit" />
+  <text>我的收藏</text>
+  <image class="arrow" src="/images/rightArrow.png" mode="widthFix" />
+</navigator>
+
+<view bindtap="makePhoneCall" class="tableviewcell">
+  <image class="icon" src="/images/icon_call.png" mode="aspectFit" />
+  <text>客服电话 400-018-0282</text>
+  <image class="arrow" src="/images/rightArrow.png" mode="widthFix" />
+</view>

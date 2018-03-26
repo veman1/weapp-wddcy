@@ -1,0 +1,137 @@
+
+
+page {
+  font-size: 28rpx;
+}
+
+/* 高亮颜色 */
+.hl { color: #BF4542; }
+
+/**/
+/* title */
+/**/
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+/**/
+/* 地址栏 */
+/**/
+.address {
+  background: #fff;
+  padding: 0 20rpx 20rpx;
+  line-height: 2em;
+  margin-bottom: 20rpx;
+}
+.address-user {
+  padding: 0 0 0 40rpx;
+}
+.address-user .text-badge {
+  display: inline-block;
+  font-weight: normal;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: normal;
+  background: #FF1D1D;
+  padding: 5rpx 10rpx;
+  border-radius: 2px;
+}
+.address-addr {
+  display: flex;
+  align-items: center;
+}
+.addr-icon {
+  vertical-align: middle;
+  margin-right: 20rpx;
+  width: 25rpx;
+}
+.addr-content {
+  width: 95%;
+  color: #666;
+  line-height: 1.5em;
+}
+
+/**/
+/* goods */
+/**/
+.goods {
+  margin-bottom: 20rpx;
+}
+.goods-item {
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+  height: 180rpx;
+  padding: 20rpx 20rpx 20rpx 180rpx;
+}
+.goods-item-img {
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+.goods-item-main {
+  width: 570rpx;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.subtitle {
+  color: #999;
+}
+
+/**/
+/* panel */
+/**/
+.panel {
+  
+}
+.panel-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 2.5rem;
+  background: #fff;
+}
+
+/**/
+/* sum box */
+/**/
+.sum_box>view {
+  text-align: right; 
+}
+.sum_box .sum {
+  font-weight: bold;
+}
+.sum_box .time {
+  color: #999;
+}
+
+/**/
+/* footer */
+/**/
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer-btn {
+  width: 200rpx;
+  text-align: center;
+  padding: .5em 0;
+  border-radius: 2px;
+  color: #999;
+  border: 1px solid #999;
+  margin-left: 20rpx;
+}
+.footer-btn.footer-btn-pay {
+  color: #BF4542;
+  border: 1px solid #BF4542;
+}

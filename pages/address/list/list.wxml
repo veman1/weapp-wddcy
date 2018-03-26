@@ -1,0 +1,33 @@
+<view class="address-list">
+  <view class="item" wx:for="{{ addressObjects }}" bindtap="setDefault" data-id="{{index}}">
+    <!-- first row -->
+    <view class="header">
+      <text style="width:100px" class="realname" bindtap="" data-index="{{ index }}">{{item.name}}</text>
+      <text style="margin-left:40rpx" class="mobile">电话:{{item.mobile}}</text>
+    </view>
+    <!-- second row -->
+    <view class="summary">{{item.province}} {{item.city}} {{item.region}} {{item.addr}}</view>
+    <!-- third row -->
+    <view class="footer">
+      <!-- is default switch -->
+      <view class="set-default" data-addr-id="{{ item.addr_id }}" data-index="{{ index }}" bindtap="">
+        <!-- circle or success type -->
+        <!-- <icon type="{{item.def_addr ? 'success_circle' : 'circle'}}" /> -->
+        <text>{{ item.def_addr ? '默认地址' : '' }}</text>
+      </view>
+      <!-- edit and delete button -->
+      <view class="operation">
+        <view class="container" data-index="{{index}}" catchtap="edit">
+          <image src="../../../images/icon_edit.png" />
+          <text>编辑</text>
+        </view>
+        <view class="container" data-addr-id="{{ item.addr_id }}" catchtap="delete">
+          <image src="../../../images/icon_delete.png" />
+          <text>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<button bindtap="add" class="address-add">添加</button>

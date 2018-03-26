@@ -1,0 +1,72 @@
+<view wx:if="{{empty}}" class="view-empty">
+  <image src="/images/cart.png" mode="widthFix"></image>
+  <text class="hint">购物车还是空的</text>
+  <text class="btn" bindtap="see">马上逛逛</text>
+</view>
+
+<block wx:else>
+
+
+  <block wx:for="{{ storelist }}" wx:for-index="store_index">
+    <view class="g-stores">
+      <view class="g-stores_sname">
+        <image src="/images/icon_store.png" mode="widthFix" />
+        <text>{{ item.store_name }}</text>
+      </view>
+      <view wx:for="{{ item.goodslist }}" class="carts-item">
+        <!-- 复选框 -->
+        <view data-index="{{index}}" class="checkbox-area" bindtap="checkTap" data-s-index="{{ store_index }}" data-g-index="{{ index }}"  data-checked="{{ !item.is_check }}" data-product-id="{{ item.product_id }}"> 
+          <image wx:if="{{item.is_check}}" src="/images/checkBox-selected.png"></image>
+          <icon wx:else type="circle" />
+        </view>
+
+        <!-- 缩略图 -->
+        <view>
+          <image class="carts-image " src="{{item.image_default}} " mode="aspectFill " />
+        </view>
+
+        <!-- 右边 -->
+        <view class="carts-right ">
+          <!-- 上面 -->
+          <view class="carts-text ">
+            <!-- 商品标题 -->
+            <text class="carts-title">{{item.name}}</text>
+            <!-- 删除图标 -->
+            <image mode="aspectFit " bindtap="_deleteCart" data-cart-id="{{ item.id }}" class="image-delete " src="/images/icon_del.png "></image>
+          </view>
+
+          <!-- 下面 -->
+          <view class="carts-bottom ">
+            <!-- 市场价 -->
+            <text class="carts-price ">￥{{item.price}}</text>
+            <!-- 数量加减器 -->
+            <view class="stepper ">
+
+              <!-- 减号 -->
+              <text class="{{ item.num <= 1 ? 'disabled' : '' }}" data-cart-id="{{ item.id }}" data-product-id="{{ item.product_id }}" data-num="{{ item.num }}" bindtap="bindMinus">-</text>
+
+              <!-- 数值 -->
+              <input type="number " data-cart-id="{{ item.id }}" data-product-id="{{ item.product_id }}" bindchange="bindManual" value="{{item.num}}" />
+
+              <!-- 加号 -->
+              <text class="normal " data-cart-id="{{ item.id }}" data-product-id="{{ item.product_id }}" data-num="{{ item.num }}" bindtap="bindPlus">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 脚部 -->
+  <view wx:if="{{ storelist }}" class="carts-footer ">
+    <view class="carts-footer-left " bindtap="bindSelectAll ">
+      <!-- <icon wx:if="{{selectedAllStatus}} " type="success_circle " size="20 " />
+      <icon wx:else type="circle " size="20 " /> -->
+      <text>合计：</text>
+      <text>￥{{total}}</text>
+    </view>
+    <view class="button " bindtap="checkout">结算</view>
+  </view>
+
+
+</block>

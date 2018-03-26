@@ -1,0 +1,25 @@
+<view class="order-item" wx:for="{{collects}}" wx:key="">
+  <view class="carts-item" data-goods-id="{{item.goods_id}}" bindtap="details">
+    <view>
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{item.thumbnail}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+      <!-- 商品标题 -->
+      <text class="carts-title">{{item.name}}</text>
+      <view class="carts-subtitle">
+        <!-- 价格 -->
+        <text>￥{{item.price}}</text>
+      </view>
+      <view class="order-footer">
+        <!-- <text class="btn-pay">加入购物车</text> -->
+        <text data-favorite-id="{{item.favorite_id}}" catchtap="deleteGoods" class="btn-delete">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!collects.length}}" class="view-tint">
+  <!-- <image src="/images/icon_empty.png"></image> -->
+  <text>暂无收藏</text>
+</view>
